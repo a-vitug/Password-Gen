@@ -13,21 +13,13 @@ var pLowerCase;
 var minimumNum;
 var minimumLength = 0;
 var pSpecialChar;
-var result = [];
 var genPassword = "";
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
 
 function generatePassword(event) {
 // -------- prompt
   var pLength = prompt ("Enter the length of your custom password. Must be at least 8 characters and less than 128 characters long.");
-  
+  var result = [];
+
 // -------- if statements
   if (pLength < 8 || pLength > 128) {
     alert ("Invalid length. Please enter a valid number.");
@@ -97,5 +89,13 @@ function generatePassword(event) {
   }
   return result.join('');
 };
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
 
 generateBtn.addEventListener("click", writePassword);
