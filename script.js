@@ -23,6 +23,7 @@ function generatePassword(event) {
 // -------- if statements
   if (pLength < 8 || pLength > 128) {
     alert ("Invalid length. Please enter a valid number.");
+    return; 
   } else if (pLength >= 8 && pLength <= 128) {
     var pUpperCase = confirm ("Click OK to include upper case letters.");
     var pLowerCase = confirm ("Click OK to include lower case letters.");
